@@ -2,66 +2,234 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Organization Website</title>
+  <title>My Organization</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
+      color: #333;
     }
-    header {
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
       background: #0d6efd;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
+      padding: 15px 0;
+      z-index: 1000;
     }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* SECTIONS */
     section {
-      padding: 40px 20px;
+      padding: 80px 20px;
+      min-height: 100vh;
     }
-    .services {
+
+    /* HOME */
+    #home {
+      background: linear-gradient(to right, #0d6efd, #4facfe);
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #home h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    #home p {
+      font-size: 1.2rem;
+    }
+
+    /* ABOUT */
+    #about {
       background: #f4f4f4;
     }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #0d6efd;
+    }
+
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery div {
+      background: #ddd;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    /* CONTACT */
+    form {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background: #0d6efd;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #084298;
+    }
+
+    /* FOOTER */
     footer {
       background: #222;
-      color: #fff;
+      color: white;
       text-align: center;
       padding: 15px;
+    }
+
+    @media (max-width: 600px) {
+      #home h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>My Organization</h1>
-  <p>Working for a better future</p>
-</header>
-
-<section>
-  <h2>About Us</h2>
-  <p>
-    We are an organization dedicated to providing quality services
-    and making a positive impact in our community.
-  </p>
-</section>
-
-<section class="services">
-  <h2>Our Services</h2>
+<!-- NAVBAR -->
+<nav>
   <ul>
-    <li>Service One</li>
-    <li>Service Two</li>
-    <li>Service Three</li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+  <h1>My Organization</h1>
+  <p>Building a better future together</p>
 </section>
 
-<section>
-  <h2>Contact Us</h2>
-  <p>Email: info@organization.com</p>
-  <p>Phone: +91 98765 43210</p>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2>About Us</h2>
+    <p>
+      We are a professional organization focused on delivering quality services
+      and creating positive impact in society. Our mission is to grow, serve,
+      and inspire.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">Service One</div>
+      <div class="card">Service Two</div>
+      <div class="card">Service Three</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div>Image 1</div>
+      <div>Image 2</div>
+      <div>Image 3</div>
+      <div>Image 4</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 My Organization. All rights reserved.</p>
+  <p>© 2026 My Organization | All Rights Reserved</p>
 </footer>
 
 </body>
