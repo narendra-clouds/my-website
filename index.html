@@ -246,20 +246,32 @@ footer{
 </footer>
 
 <script>
-const scriptURL="https://script.google.com/macros/s/AKfycbyVNF6HHes-fSPRGWNZ0P2pW1p2O9BuMMHDHpehqLbSZoUDt4cw79BbRt8_0wDYNTM/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbyVNF6HHes-fSPRGWNZ0P2pW1p2O9BuMMHDHpehqLbSZoUDt4cw79BbRt8_0wDYNTM/exec";
 
-document.getElementById("contactForm").addEventListener("submit",e=>{
+document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
-  const data={
-    name:name.value,
-    email:email.value,
-    message:message.value
+
+  const nameValue = document.getElementById("name").value;
+  const emailValue = document.getElementById("email").value;
+  const messageValue = document.getElementById("message").value;
+
+  const data = {
+    name: nameValue,
+    email: emailValue,
+    message: messageValue
   };
-  fetch(scriptURL,{method:"POST",body:JSON.stringify(data)})
-  .then(()=>alert("Message sent successfully ✅"));
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(() => alert("Message sent successfully ✅"))
+  .catch(() => alert("Error! Try again"));
+
   e.target.reset();
 });
 </script>
+
 
 </body>
 </html>
