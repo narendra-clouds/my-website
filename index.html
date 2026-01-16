@@ -1,191 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Organization</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Impact Organization</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
 
-    /* NAVBAR */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #0d6efd;
-      padding: 15px 0;
-      z-index: 1000;
-    }
+body{
+  font-family:'Poppins',sans-serif;
+  color:#333;
+  background:#f8f9fa;
+}
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-    }
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#ffffff;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  z-index:1000;
+}
+nav ul{
+  display:flex;
+  justify-content:center;
+  padding:15px;
+  list-style:none;
+}
+nav ul li{
+  margin:0 15px;
+}
+nav ul li a{
+  text-decoration:none;
+  color:#0d6efd;
+  font-weight:600;
+}
 
-    nav ul li {
-      margin: 0 15px;
-    }
+/* SECTIONS */
+section{
+  padding:100px 20px;
+}
+.container{
+  max-width:1100px;
+  margin:auto;
+}
 
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* HERO */
+#home{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(to right,#0d6efd,#6610f2);
+  color:white;
+}
+#home h1{
+  font-size:3rem;
+}
+#home p{
+  margin:15px 0;
+  font-size:1.2rem;
+}
+#home a{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 30px;
+  background:white;
+  color:#0d6efd;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+}
 
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
+/* ABOUT */
+#about{
+  background:white;
+}
+h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:#0d6efd;
+}
 
-    /* SECTIONS */
-    section {
-      padding: 80px 20px;
-      min-height: 100vh;
-    }
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.card{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+.card span{
+  font-size:2rem;
+}
 
-    /* HOME */
-    #home {
-      background: linear-gradient(to right, #0d6efd, #4facfe);
-      color: white;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+/* STATS */
+#stats{
+  background:#0d6efd;
+  color:white;
+}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  text-align:center;
+}
+.stats h3{
+  font-size:2rem;
+}
 
-    #home h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+/* CONTACT */
+#contact{
+  background:white;
+}
+form{
+  max-width:500px;
+  margin:auto;
+  background:#f8f9fa;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+}
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(to right,#0d6efd,#6610f2);
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
 
-    #home p {
-      font-size: 1.2rem;
-    }
+/* FOOTER */
+footer{
+  background:#222;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
 
-    /* ABOUT */
-    #about {
-      background: #f4f4f4;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      color: #0d6efd;
-    }
-
-    /* SERVICES */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
-
-    .gallery div {
-      background: #ddd;
-      height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    /* CONTACT */
-    form {
-      max-width: 500px;
-      margin: auto;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-
-    button {
-      background: #0d6efd;
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    button:hover {
-      background: #084298;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
-
-    @media (max-width: 600px) {
-      #home h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+/* MOBILE */
+@media(max-width:600px){
+  #home h1{font-size:2.2rem;}
+}
+</style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav>
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#stats">Impact</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HOME -->
+<!-- HERO -->
 <section id="home">
-  <h1>My Organization</h1>
-  <p>Building a better future together</p>
+  <div>
+    <h1>Impact Organization</h1>
+    <p>Creating meaningful change for a better tomorrow</p>
+    <a href="#contact">Get In Touch</a>
+  </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
-    <h2>About Us</h2>
-    <p>
-      We are a professional organization focused on delivering quality services
-      and creating positive impact in society. Our mission is to grow, serve,
-      and inspire.
+    <h2>Who We Are</h2>
+    <p style="text-align:center;">
+      We are a purpose-driven organization focused on growth, service,
+      and long-term impact through innovative solutions.
     </p>
   </div>
 </section>
@@ -193,63 +206,60 @@
 <!-- SERVICES -->
 <section id="services">
   <div class="container">
-    <h2>Our Services</h2>
+    <h2>What We Do</h2>
     <div class="services">
-      <div class="card">Service One</div>
-      <div class="card">Service Two</div>
-      <div class="card">Service Three</div>
+      <div class="card"><span>🚀</span><h3>Innovation</h3><p>Smart solutions for real problems</p></div>
+      <div class="card"><span>🤝</span><h3>Community</h3><p>Empowering people together</p></div>
+      <div class="card"><span>🌱</span><h3>Sustainability</h3><p>Future-focused development</p></div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section id="gallery">
+<!-- STATS -->
+<section id="stats">
   <div class="container">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <div>Image 1</div>
-      <div>Image 2</div>
-      <div>Image 3</div>
-      <div>Image 4</div>
+    <h2 style="color:white;">Our Impact</h2>
+    <div class="stats">
+      <div><h3>500+</h3><p>People Helped</p></div>
+      <div><h3>120+</h3><p>Projects Completed</p></div>
+      <div><h3>10+</h3><p>Years Experience</p></div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<form id="contactForm">
-  <input type="text" id="name" placeholder="Your Name" required>
-  <input type="email" id="email" placeholder="Your Email" required>
-  <textarea id="message" placeholder="Your Message"></textarea>
-  <button type="submit">Send</button>
-</form>
+<section id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
 
-<script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbyVNF6HHes-fSPRGWNZ0P2pW1p2O9BuMMHDHpehqLbSZoUDt4cw79BbRt8_0wDYNTM/exec";
-
-  document.getElementById("contactForm").addEventListener("submit", e => {
-    e.preventDefault();
-
-    const data = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value
-    };
-
-    fetch(scriptURL, {
-      method: "POST",
-      body: JSON.stringify(data)
-    })
-    .then(res => alert("Message sent successfully ✅"))
-    .catch(err => alert("Error! Try again"));
-
-    e.target.reset();
-  });
-</script>
-
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
 
 <footer>
-  <p>© 2026 My Organization | All Rights Reserved</p>
+  © 2026 Impact Organization. All Rights Reserved
 </footer>
+
+<script>
+const scriptURL="https://script.google.com/macros/s/AKfycbyVNF6HHes-fSPRGWNZ0P2pW1p2O9BuMMHDHpehqLbSZoUDt4cw79BbRt8_0wDYNTM/exec";
+
+document.getElementById("contactForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const data={
+    name:name.value,
+    email:email.value,
+    message:message.value
+  };
+  fetch(scriptURL,{method:"POST",body:JSON.stringify(data)})
+  .then(()=>alert("Message sent successfully ✅"));
+  e.target.reset();
+});
+</script>
 
 </body>
 </html>
